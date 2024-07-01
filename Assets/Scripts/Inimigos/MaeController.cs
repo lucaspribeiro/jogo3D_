@@ -14,18 +14,29 @@ public class MaeController : MonoBehaviour
     private Rigidbody rb;
     private bool playerDetected = false;
     private bool returningToStart = false;
-    //private float timeToFindPlayer = 10f; 
-    //private float currentTime = 0f;
+
+    public float paralyzeDuration = 3f; // Duração da paralisação em segundos
+    private bool paralyzed = false;
+    private float originalSpeed;
+
     private Vector3 startingPosition;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         startingPosition = transform.position;
+        originalSpeed = speed; // Salvar a velocidade original
     }
 
     void Update()
     {
+
+        if (paralyzed)
+        {
+            // Se estiver paralisada, não fazer nada (parar o movimento)
+            rb.velocity = Vector3.zero;
+        }
+
         if (!returningToStart)
         {
             DetectPlayer();
@@ -96,26 +107,14 @@ public class MaeController : MonoBehaviour
         }
         
     }
-
-
-    /*
-    void OnCollisionEnter(Collision collision)
+    public void Paralyze(float duration)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // Causar dano ao jogador
-            // Exemplo: collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);   // tem que criar no player
-        }
+        paralyzed = true;
+        Invoke("EndParalyze", duration);
     }
-        
-    // tem que criar no mapa para testar depois 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Armario"))
-        {
-            playerDetected = true;
-        }
-    }
-    */
 
+    void EndParalyze()
+    {
+        paralyzed = false;
+    }
 }
