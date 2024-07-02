@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Armario
   - MagicCircle
+  - Closet
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerTestController : MonoBehaviour
 {
     public Rigidbody rb;
-    public float speed = 5f;
-    private bool isHidden = false;
+    public float speed = 5;
+
+    private Vector2 moveInput;
 
     void Start()
     {
@@ -15,34 +16,13 @@ public class PlayerTestController : MonoBehaviour
 
     void Update()
     {
-        if (!isHidden)
-        {
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
 
-            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            rb.velocity = movement * speed;
-        }
-        else
-        {
-            rb.velocity = Vector3.zero;
-        }
+        moveInput.x = Input.GetAxis("Horizontal");
+        moveInput.y = Input.GetAxis("Vertical");
+        moveInput.Normalize();
+
+        rb.velocity = new Vector3(moveInput.x * speed, rb.velocity.y, moveInput.y * speed);
+
     }
 
-    public void Hide()
-    {
-        isHidden = true;
-        gameObject.SetActive(false); // vai tornar o jogador invisivel
-    }
-
-    public void Unhide()
-    {
-        isHidden = false;
-        gameObject.SetActive(true); // torna o jogador visivel de novo
-    }
-
-    public bool IsHidden()
-    {
-        return isHidden;
-    }
 }
