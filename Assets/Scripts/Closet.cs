@@ -7,12 +7,24 @@ public class Closet : MonoBehaviour
     private bool isPlayerNearby = false;
     private bool isPlayerHiding = false;
     private Transform player;
-    private EnemyFather enemyScript;
+    private EnemyFather enemyFatherScript;
+    private EnemyMother enemyMotherScript;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        enemyScript = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyFather>();
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        GameObject enemyFatherObject = GameObject.FindGameObjectWithTag("EnemyFather");
+        if (enemyFatherObject != null)
+        {
+            enemyFatherScript = enemyFatherObject.GetComponent<EnemyFather>();
+        }
+
+        GameObject enemyMotherObject = GameObject.FindGameObjectWithTag("EnemyMother");
+        if (enemyMotherObject != null)
+        {
+            enemyMotherScript = enemyMotherObject.GetComponent<EnemyMother>();
+        }
     }
 
     void Update()
@@ -22,16 +34,37 @@ public class Closet : MonoBehaviour
             if (isPlayerHiding)
             {
                 // Lógica para sair do armário
-                player.gameObject.SetActive(true); // Torna o jogador visível
-                enemyScript.isHiding = false; // Atualiza o estado de hiding
+                if (player != null)
+                {
+                    player.gameObject.SetActive(true); // Torna o jogador visível
+                }
+                if (enemyFatherScript != null)
+                {
+                    enemyFatherScript.isHiding = false; // Atualiza o estado de hiding
+                }
+                if (enemyMotherScript != null)
+                {
+                    enemyMotherScript.isHiding = false; // Atualiza o estado de hiding
+                }
                 isPlayerHiding = false;
             }
             else
             {
                 // Lógica para entrar no armário
-                player.gameObject.SetActive(false); // Esconde o jogador
-                enemyScript.StopChase(); // Faz o Pai parar de perseguir e retornar
-                enemyScript.isHiding = true; // Atualiza o estado de hiding
+                if (player != null)
+                {
+                    player.gameObject.SetActive(false); // Esconde o jogador
+                }
+                if (enemyFatherScript != null)
+                {
+                    enemyFatherScript.StopChase(); // Faz o Pai parar de perseguir e retornar
+                    enemyFatherScript.isHiding = true; // Atualiza o estado de hiding
+                }
+                if (enemyMotherScript != null)
+                {
+                    enemyMotherScript.StopChase(); // Faz a Mãe parar de perseguir e retornar
+                    enemyMotherScript.isHiding = true; // Atualiza o estado de hiding
+                }
                 isPlayerHiding = true;
             }
         }

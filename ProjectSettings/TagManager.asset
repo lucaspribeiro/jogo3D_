@@ -6,7 +6,8 @@ TagManager:
   tags:
   - MagicCircle
   - Closet
-  - Enemy
+  - EnemyMother
+  - EnemyFather
   layers:
   - Default
   - TransparentFX
