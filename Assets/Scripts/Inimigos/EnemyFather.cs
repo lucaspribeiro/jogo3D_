@@ -11,7 +11,8 @@ public class EnemyFather : MonoBehaviour
     private bool isChasing;
     private float chaseTimer;
     private Rigidbody rb;
-    public bool isHiding; // Adicionado para verificar se o jogador está escondido
+    public bool isHiding;
+    public int damage = 2;
 
     void Start()
     {
@@ -76,5 +77,17 @@ public class EnemyFather : MonoBehaviour
     {
         Vector3 direction = (initialPosition - transform.position).normalized;
         rb.velocity = new Vector3(direction.x * chaseSpeed, rb.velocity.y, direction.z * chaseSpeed);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player")) 
+        {
+            PlayerTestController playerController = collision.gameObject.GetComponent<PlayerTestController>();
+            if(playerController != null) 
+            {
+                playerController.TakeDamage(damage);
+            }
+        }
     }
 }
