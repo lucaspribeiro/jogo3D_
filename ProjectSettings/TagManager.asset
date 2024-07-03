@@ -8,6 +8,7 @@ TagManager:
   - Closet
   - EnemyMother
   - EnemyFather
+  - ImaginaryFriend
   layers:
   - Default
   - TransparentFX

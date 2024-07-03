@@ -9,6 +9,7 @@ public class Closet : MonoBehaviour
     private Transform player;
     private EnemyFather enemyFatherScript;
     private EnemyMother enemyMotherScript;
+    private ImaginaryFriend imaginaryFriendScript;
 
     void Start()
     {
@@ -24,6 +25,12 @@ public class Closet : MonoBehaviour
         if (enemyMotherObject != null)
         {
             enemyMotherScript = enemyMotherObject.GetComponent<EnemyMother>();
+        }
+
+        GameObject imaginaryFriendObject = GameObject.FindGameObjectWithTag("ImaginaryFriend");
+        if (imaginaryFriendObject != null)
+        {
+            imaginaryFriendScript = imaginaryFriendObject.GetComponent<ImaginaryFriend>();
         }
     }
 
@@ -46,6 +53,10 @@ public class Closet : MonoBehaviour
                 {
                     enemyMotherScript.isHiding = false; // Atualiza o estado de hiding
                 }
+                if (imaginaryFriendScript != null)
+                {
+                    imaginaryFriendScript.isHiding = false; // Atualiza o estado de hiding
+                }
                 isPlayerHiding = false;
             }
             else
@@ -64,6 +75,11 @@ public class Closet : MonoBehaviour
                 {
                     enemyMotherScript.StopChase(); // Faz a Mãe parar de perseguir e retornar
                     enemyMotherScript.isHiding = true; // Atualiza o estado de hiding
+                }
+                if (imaginaryFriendScript != null)
+                {
+                    imaginaryFriendScript.StopChase(); // Faz o Amigo Imaginário parar de perseguir e retornar
+                    imaginaryFriendScript.isHiding = true; // Atualiza o estado de hiding
                 }
                 isPlayerHiding = true;
             }
