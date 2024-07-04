@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyMother : MonoBehaviour
 {
-    public float detectionRange = 15f;
+    public float detectionRange = 12f;
     public float chaseSpeed = 5f;
     public float chaseDuration = 3f;
     public Vector3 initialPosition;
