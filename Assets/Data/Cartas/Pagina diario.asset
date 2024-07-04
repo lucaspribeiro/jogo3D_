@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34973372bf083de48886158b66f15e46, type: 3}
-  m_Name: papel 2
+  m_Name: Pagina diario
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: papel 2
+  id: 5
+  itemName: "P\xE1gina de um di\xE1rio"
   value: 1
   icon: {fileID: 21300000, guid: a9850068aafa11745affa6305cfdcf4b, type: 3}
+  description: "Parece que a m\xE3e tinha suspeitas de haver um espirito maligno
+    rondando a crian\xE7a, mas esse relato \xE9 estranho n\xE3o parece ter um motivo
+    claro para um espirito ir atr\xE1s de um crian\xE7a ale\xE1toria, normalmente
+    os espiritos se prendem a coisas ou lugares de grande significado para eles."

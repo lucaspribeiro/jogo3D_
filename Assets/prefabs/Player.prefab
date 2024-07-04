@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 343685600684861165}
   - component: {fileID: 8726452158253786796}
   m_Layer: 0
-  m_Name: andando_de_frente_para_tras_0
+  m_Name: sprite Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2347513484303181363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1476303440, guid: d3b0d3a6633125543a2ad057c2088a5d, type: 3}
+  m_Sprite: {fileID: 1820040039, guid: 3ebeb91fb5e58c249af6d0a3ec8f3e83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: -2600351013982728041}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,10 +188,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6073477
-  m_Height: 4.3019066
+  m_Radius: 1.2809958
+  m_Height: 4.7651534
   m_Direction: 1
-  m_Center: {x: -0.21635938, y: 0.14673185, z: 0}
+  m_Center: {x: -0.029103756, y: 0.043714285, z: 0}
 --- !u!114 &-2600351013982728041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +206,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   speed: 5
+  inventario: {fileID: 0}
+  opcao: 1
+  opcaoRot: 0
+  rotSprite: {fileID: 3249746432024526457}
+  anim: {fileID: 8726452158253786796}
 --- !u!1 &9106353273565335201
 GameObject:
   m_ObjectHideFlags: 0

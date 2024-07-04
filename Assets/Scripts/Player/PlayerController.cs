@@ -7,12 +7,11 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public float speed = 5;
     public GameObject inventario;
-    public int opcao = 1;
-    public int opcaoRot = 0;
 
     private Camera mainCam;
     private Vector3 moveInput;
     [SerializeField] private Transform rotSprite;
+    [SerializeField] private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +30,42 @@ public class PlayerController : MonoBehaviour
 
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.z = Input.GetAxis("Vertical");
+
+        if (moveInput.z > 0)
+        {
+            anim.SetFloat("direcao", 1);
+        }else if(moveInput.z < 0)
+        {
+            anim.SetFloat("direcao", 2);
+        }
+        else
+        {
+            anim.SetFloat("direcao", 0);
+        }
+
+        if(moveInput.x == 0)
+        {
+            anim.SetBool("andando_lado", false);
+            //rotSprite.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            if (anim.GetFloat("direcao") == 0)
+            {
+                anim.SetFloat("direcao", 2);
+            }
+            anim.SetBool("andando_lado", true);
+
+            if (moveInput.x > 0)
+            {
+                rotSprite.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                rotSprite.GetComponent<SpriteRenderer>().flipX = false;
+            }
+
+        }
         moveInput.Normalize();
         moveInput *= speed;
 
