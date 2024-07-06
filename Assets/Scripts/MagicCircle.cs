@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,8 @@ public class MagicCircle : MonoBehaviour
     public float effectDuration = 10f;
     public float reactivationDelay = 30f;
     private bool isActive = false;
-    private bool isInCooldown = false; // Adicionado para verificar se está em cooldown
+    private bool isInCooldown = false; // Verifica se está em cooldown
+    private bool isPlayerNearby = false; // Verifica se o jogador está próximo
     private static Queue<MagicCircle> activeCircles = new Queue<MagicCircle>();
     private static int maxActiveCircles = 3;
 
@@ -25,16 +27,13 @@ public class MagicCircle : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (isPlayerNearby && Input.GetKeyDown(KeyCode.G) && !isActive && !isInCooldown)
         {
-            if (isActive)
-            {
-                DeactivateCircle();
-            }
-            else if (!isInCooldown)
-            {
-                ActivateCircle();
-            }
+            ActivateCircle();
+        }
+        else if (isPlayerNearby && Input.GetKeyDown(KeyCode.G) && isActive)
+        {
+            DeactivateCircle();
         }
     }
 
@@ -42,8 +41,14 @@ public class MagicCircle : MonoBehaviour
     {
         if (activeCircles.Count >= maxActiveCircles)
         {
-            activeCircles.Dequeue().DeactivateCircle();
+            MagicCircle oldestCircle = activeCircles.Peek();
+            if (oldestCircle != null && oldestCircle.isActive)
+            {
+                activeCircles.Dequeue();
+                oldestCircle.DeactivateCircle();
+            }
         }
+
         isActive = true;
         activeCircles.Enqueue(this);
         SetActiveVisuals();
@@ -53,6 +58,7 @@ public class MagicCircle : MonoBehaviour
     {
         isActive = false;
         isInCooldown = true; // Define que o círculo está em cooldown
+        activeCircles = new Queue<MagicCircle>(activeCircles.Where(c => c != this)); // Remove este círculo da fila de ativos
         SetInactiveVisuals();
         StartCoroutine(ReactivationCooldown());
     }
@@ -96,9 +102,12 @@ public class MagicCircle : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!isActive) return;
+        if (other.CompareTag("Player"))
+        {
+            isPlayerNearby = true;
+        }
 
-        if (other.CompareTag("EnemyFather") || other.CompareTag("EnemyMother") || other.CompareTag("ImaginaryFriend"))
+        if (isActive && (other.CompareTag("EnemyFather") || other.CompareTag("EnemyMother") || other.CompareTag("ImaginaryFriend")))
         {
             if (other.CompareTag("EnemyFather") || other.CompareTag("EnemyMother"))
             {
@@ -109,6 +118,14 @@ public class MagicCircle : MonoBehaviour
                 StartCoroutine(SlowDownEnemy(other.GetComponent<ImaginaryFriend>(), effectDuration));
             }
             DeactivateCircle();
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerNearby = false;
         }
     }
 
