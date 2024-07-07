@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
 
     public Transform ItemContent;
     public GameObject inventoryItem;
+    public GameObject infoLocal;
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,7 +20,13 @@ public class InventoryManager : MonoBehaviour
 
     public void Add(Item item)
     {
-        Items.Add(item);
+        if (!Items.Contains(item))
+        {
+            Items.Add(item);
+        }else if(item.itemName.Equals("Sal") || item.itemName.Equals("Bandagens"))
+        {
+            Items[Items.IndexOf(item)].value += 1;
+        }
     }
 
     public void Remove(Item item)
@@ -55,24 +62,38 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void ListItem(Item item)
-    {
-        if (item.itemName.Equals("Sal"))
+    {        
+        if (item.itemName.Equals("Sal") || item.itemName.Equals("Bandagens"))
         {
             foreach(Transform obj in ItemContent)
             {
                 var itemName = obj.transform.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>();
-                int pos = 0;
-                if (itemName.Equals(item.itemName))
+                int pos = Items.IndexOf(item);
+                if (itemName.text.Equals(item.itemName))
                 {
                     var itemCount = obj.transform.Find("Quantidade").GetComponent<TMPro.TextMeshProUGUI>();
-                    int countText = (Items[pos].value + 1);
-                    itemCount.text = countText.ToString();
+                    itemCount.text = Items[pos].value.ToString();
+                    Dialogue dialogo = new Dialogue();
+                    dialogo.characterImage = item.icon;
+                    dialogo.sentences = new List<string>();
+                    dialogo.sentences.Add(item.description);
+                    DialogueTrigger trigger = obj.transform.GetComponent<DialogueTrigger>();
+                    trigger.dialogue = dialogo;
+                    trigger.dialogueBox = infoLocal;
                     break;
                 }
             }
         }
         else
         {
+            foreach (Transform objec in ItemContent)
+            {
+                var name = objec.transform.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>();
+                if (item.itemName.Equals(name.text))
+                {
+                    return;
+                }
+            }
             GameObject obj = Instantiate(inventoryItem, ItemContent);
             var itemName = obj.transform.Find("ItemName").GetComponent<TMPro.TextMeshProUGUI>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
@@ -81,6 +102,14 @@ public class InventoryManager : MonoBehaviour
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
             itemCount.text = null;
+
+            Dialogue dialogo = new Dialogue();
+            dialogo.characterImage = item.icon;
+            dialogo.sentences = new List<string>();
+            dialogo.sentences.Add(item.description);
+            DialogueTrigger trigger = obj.transform.GetComponent<DialogueTrigger>();
+            trigger.dialogue = dialogo;
+            trigger.dialogueBox = infoLocal;
         }
     }
 }

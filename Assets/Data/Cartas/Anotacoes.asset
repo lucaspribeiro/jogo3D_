@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34973372bf083de48886158b66f15e46, type: 3}
+  m_Name: Anotacoes
+  m_EditorClassIdentifier: 
+  id: 1
+  itemName: "Anota\xE7\xF5es"
+  value: 0
+  icon: {fileID: 21300000, guid: e1ab3fa9b06835a4581c5d6de52584d1, type: 3}
+  description: "Essas anota\xE7\xF5es s\xE3o meio estranhas, a crian\xE7a conta que
+    estava brincando do lado de fora da casa, engra\xE7ado me lembro de ter lido
+    que a crian\xE7a que morava nesta casa n\xE3o podia sair de casa devido a uma
+    doen\xE7a de pele."

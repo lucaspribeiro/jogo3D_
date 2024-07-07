@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34973372bf083de48886158b66f15e46, type: 3}
-  m_Name: papel 1
+  m_Name: Sal
   m_EditorClassIdentifier: 
-  id: 1
-  itemName: papel 1
-  value: 0
+  id: 8
+  itemName: Sal
+  value: 1
   icon: {fileID: 21300000, guid: e1ab3fa9b06835a4581c5d6de52584d1, type: 3}
+  description: "\xC9 um sal comum de cozinha, n\xE3o \xE9 muito forte contra todos
+    os espiritos, mas \xE9 bem mais acessivel e funciona relativamente bem, \xE9
+    sempre bom manter algum consigo quando estiver lidando com espiritos."
