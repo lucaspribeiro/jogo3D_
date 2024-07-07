@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ImaginaryFriend : MonoBehaviour
 {
-    public float detectionRange = 20f;
+    public float detectionRange = 15f;
     public float chaseSpeed = 2f;
     public float chaseDuration = 5f;
     public Vector3 initialPosition;
