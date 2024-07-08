@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7db0129e259f1c4abcac7a62b3dbc01
+guid: 587c79476354df54ea57c1164f33f680
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a352daa58a7463b47abb322906d94d9b
-      internalID: -1534969775
+      spriteID: cd13bc26c943a7a4dbf915d352d5dd3a
+      internalID: 222001484
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 338e50fe68fbd5741a3647a0b2fd48a2
-      internalID: -1576136601
+      spriteID: c63ff5ba87cb27c4baf4198979951ddd
+      internalID: -282722300
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 772d2aeb843a7124e83eb560b9524a93
-      internalID: 1160578254
+      spriteID: dad3dd57b5f148a45af93b85cee9f77c
+      internalID: -1104086417
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f99eab19c76ce67459f1b86138250842
-      internalID: 1754256701
+      spriteID: 3336b43c9359c9248b1727be451738f9
+      internalID: -717638334
       vertices: []
       indices: 
       edges: []
@@ -183,7 +183,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5f314fd21381cdf41b9d013caf27c3ba
+    spriteID: 151903e6b75f5de4d8336d39613b49dd
     internalID: 0
     vertices: []
     indices: 
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      T_Forward_SideWalk_01_0: -1534969775
-      T_Forward_SideWalk_01_1: -1576136601
-      T_Forward_SideWalk_01_2: 1160578254
-      T_Forward_SideWalk_01_3: 1754256701
+      T_Forward_SideWalk_01_0: 222001484
+      T_Forward_SideWalk_01_1: -282722300
+      T_Forward_SideWalk_01_2: -1104086417
+      T_Forward_SideWalk_01_3: -717638334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

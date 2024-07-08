@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public float speed = 5;
     public GameObject inventario;
+    public int opcao = 0;
 
     private Camera mainCam;
     private Vector3 moveInput;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab) && inventario.active == false){
             //inventario.GetComponent<InventoryManager>().ListItems();
             inventario.SetActive(true);
+            MouseController.Instance.UnlockMouse();
             //InventoryManager.Instance.ListItems();
         }
 
@@ -34,7 +36,8 @@ public class PlayerController : MonoBehaviour
         if (moveInput.z > 0)
         {
             anim.SetFloat("direcao", 1);
-        }else if(moveInput.z < 0)
+        }
+        else if(moveInput.z < 0)
         {
             anim.SetFloat("direcao", 2);
         }
@@ -64,13 +67,11 @@ public class PlayerController : MonoBehaviour
             {
                 rotSprite.GetComponent<SpriteRenderer>().flipX = false;
             }
-
         }
         moveInput.Normalize();
         moveInput *= speed;
 
         rb.velocity = transform.forward * moveInput.z + transform.right * moveInput.x + (new Vector3(0,rb.velocity.y,0));
-    
 
     }
 
