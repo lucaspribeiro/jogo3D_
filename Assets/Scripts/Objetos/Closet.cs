@@ -75,7 +75,6 @@ public class Closet : MonoBehaviour
                 {
                     enemyMotherScript.StopChase(); // Faz a Mãe parar de perseguir e retornar
                     enemyMotherScript.isHiding = true; // Atualiza o estado de hiding
-                    enemyMotherScript.ReturnToInitialPosition(); // Força a Mãe a retornar à posição inicial
                 }
                 if (imaginaryFriendScript != null)
                 {
