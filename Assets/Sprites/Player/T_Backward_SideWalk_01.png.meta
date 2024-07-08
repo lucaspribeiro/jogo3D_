@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e621e298214d1a84992d0482da231d64
+guid: b8816ba5d1402364ea528a84370957e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 728a629f9037a434fadc7677d6d3c995
-      internalID: 1359865804
+      spriteID: 145b74daefa334f4ea3c96310fc4acc3
+      internalID: -1975150827
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa191bb0f87baf843a15d4a22a86a542
-      internalID: -1811184192
+      spriteID: 875994e93dc54654a98793dd62e3b5ba
+      internalID: 1682195191
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c46f9da5e1fde342877a7f3edf6f6a8
-      internalID: -56928420
+      spriteID: 451eec56c67ec0b4b875712d578ffc9f
+      internalID: -1864175534
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bef1687bb8c718244853f57731448997
-      internalID: -756156989
+      spriteID: a38738d014d3c6c40802a835850faffa
+      internalID: 1739567347
       vertices: []
       indices: 
       edges: []
@@ -183,7 +183,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 279a27257b3ba69418056d4c303a0b03
+    spriteID: 0c3f5e3ec12cd734781b124e41fc94a9
     internalID: 0
     vertices: []
     indices: 
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      T_Backward_SideWalk_01_0: 1359865804
-      T_Backward_SideWalk_01_1: -1811184192
-      T_Backward_SideWalk_01_2: -56928420
-      T_Backward_SideWalk_01_3: -756156989
+      T_Backward_SideWalk_01_0: -1975150827
+      T_Backward_SideWalk_01_1: 1682195191
+      T_Backward_SideWalk_01_2: -1864175534
+      T_Backward_SideWalk_01_3: 1739567347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
