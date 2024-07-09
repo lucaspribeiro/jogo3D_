@@ -130,7 +130,7 @@ public class EnemyMother : MonoBehaviour
 
     IEnumerator HoldPlayerCoroutine()
     {
-        PlayerTestController playerController = player.GetComponent<PlayerTestController>();
+        PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.enabled = false; // Desativar controle do jogador
 
         while (isHoldingPlayer)
@@ -152,7 +152,7 @@ public class EnemyMother : MonoBehaviour
     void ReleasePlayer()
     {
         isHoldingPlayer = false;
-        PlayerTestController playerController = player.GetComponent<PlayerTestController>();
+        PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.enabled = true; // Reativar controle do jogador
         gameObject.SetActive(false); // Mãe some
         Debug.Log("Mãe sumiu.");

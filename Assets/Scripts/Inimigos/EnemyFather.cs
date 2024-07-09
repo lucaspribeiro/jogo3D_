@@ -105,12 +105,12 @@ public class EnemyFather : MonoBehaviour
         isChasing = false;
         isHoldingPlayer = true;
         rb.velocity = Vector3.zero; // Parar o movimento do inimigo
-        PlayerTestController playerController = player.GetComponent<PlayerTestController>();
+        PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.enabled = false; // Desativar controle do jogador
         StartCoroutine(HoldPlayerCoroutine(playerController));
     }
 
-    IEnumerator HoldPlayerCoroutine(PlayerTestController playerController)
+    IEnumerator HoldPlayerCoroutine(PlayerController playerController)
     {
         while (isHoldingPlayer)
         {
@@ -135,7 +135,7 @@ public class EnemyFather : MonoBehaviour
     void KillFather()
     {
         isHoldingPlayer = false;
-        PlayerTestController playerController = player.GetComponent<PlayerTestController>();
+        PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.enabled = true; // Reativar controle do jogador
         Destroy(gameObject); // Pai morre
         Debug.Log("Pai morreu.");

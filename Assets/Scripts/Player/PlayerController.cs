@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +15,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveInput;
     [SerializeField] private Transform rotSprite;
     [SerializeField] private Animator anim;
+
+
+    public int maxHealth = 100;
+    public int currentHealth;
+    public Text healthText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,6 +94,27 @@ public class PlayerController : MonoBehaviour
         //transform.LookAt(transform.position, rotation*Vector3.up);
         //transform.rotation = Quaternion.Euler(0,-rotSprite.rotation.y,0);
 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        UpdateHealthUI();
+
+        if (currentHealth < 0)
+        {
+            Die();
+        }
+    }
+
+    void UpdateHealthUI()
+    {
+        healthText.text = "Health: " + currentHealth;
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("scenne Lucas");
     }
 
 }

@@ -96,12 +96,12 @@ public class ImaginaryFriend : MonoBehaviour
         isChasing = false;
         isHoldingPlayer = true;
         rb.velocity = Vector3.zero; // Parar o movimento do inimigo
-        PlayerTestController playerController = player.GetComponent<PlayerTestController>();
+        PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.enabled = false; // Desativar controle do jogador
         StartCoroutine(HoldPlayerCoroutine(playerController));
     }
 
-    IEnumerator HoldPlayerCoroutine(PlayerTestController playerController)
+    IEnumerator HoldPlayerCoroutine(PlayerController playerController)
     {
         while (isHoldingPlayer)
         {
@@ -123,7 +123,7 @@ public class ImaginaryFriend : MonoBehaviour
         }
     }
 
-    void ReleasePlayer(PlayerTestController playerController)
+    void ReleasePlayer(PlayerController playerController)
     {
         isHoldingPlayer = false;
         playerController.enabled = true; // Reativar controle do jogador
