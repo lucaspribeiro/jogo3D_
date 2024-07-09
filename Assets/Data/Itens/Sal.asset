@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   itemName: Sal
-  value: 1
+  value: 0
   icon: {fileID: 21300000, guid: e1ab3fa9b06835a4581c5d6de52584d1, type: 3}
   description: "\xC9 um sal comum de cozinha, n\xE3o \xE9 muito forte contra todos
     os espiritos, mas \xE9 bem mais acessivel e funciona relativamente bem, \xE9

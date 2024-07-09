@@ -27,11 +27,49 @@ public class InventoryManager : MonoBehaviour
         {
             Items[Items.IndexOf(item)].value += 1;
         }
+        ListItem(item);
     }
 
+    /*
+    // funcao que funciona antes 
     public void Remove(Item item)
     {
         Items.Remove(item);
+    }
+    */
+
+    // ** funcao que eu fiz q pode quebrar o codigo**
+    public void Remove(Item item)
+    {
+        if (Items.Contains(item))
+        {
+            if (item.itemName.Equals("Sal") || item.itemName.Equals("Bandagens"))
+            {
+                Items[Items.IndexOf(item)].value -= 1;
+                if (Items[Items.IndexOf(item)].value <= 0)
+                {
+                    Items.Remove(item);
+                }
+            }
+            else
+            {
+                Items.Remove(item);
+            }
+            Debug.Log(item.itemName + " removido. Quantidade restante: " + Items.Count);
+            ListItem(item); // Atualizar o UI após remover item
+        }
+    }
+
+    public bool HasItem(string itemName)
+    {
+        foreach (Item item in Items)
+        {
+            if (item.itemName.Equals(itemName) && item.value > 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void ListItems()

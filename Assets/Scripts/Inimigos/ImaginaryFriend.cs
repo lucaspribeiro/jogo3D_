@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class ImaginaryFriend : MonoBehaviour
 {
@@ -101,6 +102,9 @@ public class ImaginaryFriend : MonoBehaviour
         StartCoroutine(HoldPlayerCoroutine(playerController));
     }
 
+    /*
+    // funcao que funciona antes de eu alterar  
+     
     IEnumerator HoldPlayerCoroutine(PlayerController playerController)
     {
         while (isHoldingPlayer)
@@ -122,7 +126,36 @@ public class ImaginaryFriend : MonoBehaviour
             }
         }
     }
+    */
 
+    IEnumerator HoldPlayerCoroutine(PlayerController playerController)
+    {
+        while (isHoldingPlayer)
+        {
+            playerController.TakeDamage(damage);
+            Debug.Log("Jogador tomou dano.");
+
+            float timer = 3f;
+            while (timer > 0)
+            {
+                // ***Início da Alteração***
+                if (Input.GetKeyDown(KeyCode.X) && InventoryManager.Instance.HasItem("Sal"))
+                {
+                    Debug.Log("Jogador pressionou X e tem sal no inventário.");
+                    InventoryManager.Instance.Remove(new Item { itemName = "Sal", value = 1 }); // Remover 1 sal do inventário
+                    ReleasePlayer(playerController);
+                    yield break;
+                }
+                // ***Fim da Alteração***
+                timer -= Time.deltaTime;
+                yield return null;
+            }
+        }
+    }
+
+
+    /*
+    // funcao que funciona antes
     void ReleasePlayer(PlayerController playerController)
     {
         isHoldingPlayer = false;
@@ -130,6 +163,31 @@ public class ImaginaryFriend : MonoBehaviour
         PushEnemyBack(); // Empurrar o inimigo para trás
         Debug.Log("Jogador empurrou o Amigo Imaginário para trás.");
     }
+    */
+
+    void ReleasePlayer(PlayerController playerController)
+    {
+        isHoldingPlayer = false;
+        playerController.enabled = true; // Reativar controle do jogador
+
+        // Verificar e remover sal do inventário
+        Item sal = InventoryManager.Instance.Items.FirstOrDefault(i => i.itemName == "Sal");
+        if (sal != null)
+        {
+            InventoryManager.Instance.Remove(sal);
+
+            // Verificar se o item ainda está no inventário antes de atualizar o UI
+            if (InventoryManager.Instance.Items.Contains(sal))
+            {
+                InventoryManager.Instance.ListItem(sal);
+            }
+        }
+
+        PushEnemyBack(); // Empurrar o inimigo para trás
+        Debug.Log("Jogador empurrou o Amigo Imaginário para trás.");
+    }
+
+
 
     void PushEnemyBack()
     {

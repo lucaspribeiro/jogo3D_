@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform rotSprite;
     [SerializeField] private Animator anim;
 
-
+    
+    // **adicionei pra vida do personagem atualizar (nao sei como eh pra ser so fiz de exemplo)**
     public int maxHealth = 100;
     public int currentHealth;
     public Text healthText;
@@ -96,6 +97,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // **adicionei**
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -107,11 +109,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // **adicionei**
     void UpdateHealthUI()
     {
         healthText.text = "Health: " + currentHealth;
     }
 
+    // **adicionei**
     public void Die()
     {
         SceneManager.LoadScene("scenne Luis");
