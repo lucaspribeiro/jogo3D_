@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 1
   itemName: "Anota\xE7\xF5es"
   value: 0
-  icon: {fileID: 21300000, guid: e1ab3fa9b06835a4581c5d6de52584d1, type: 3}
+  icon: {fileID: -786861145, guid: f7d464d3d80ecf44a96fbc66a77a4f1a, type: 3}
+  imageDetails: {fileID: 21300000, guid: fddb4dd2cc8c1d44a8abe456cb84d644, type: 3}
   description: "Essas anota\xE7\xF5es s\xE3o meio estranhas, a crian\xE7a conta que
     estava brincando do lado de fora da casa, engra\xE7ado me lembro de ter lido
     que a crian\xE7a que morava nesta casa n\xE3o podia sair de casa devido a uma

@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 9
   itemName: Livro Sobrenatural
   value: 0
-  icon: {fileID: 21300000, guid: a9850068aafa11745affa6305cfdcf4b, type: 3}
+  icon: {fileID: 1222556344, guid: c40f63e53f697114e9fca8e90ab63f94, type: 3}
+  imageDetails: {fileID: 1222556344, guid: c40f63e53f697114e9fca8e90ab63f94, type: 3}
   description: "\xC9 o livro que utilizo para realizar alguns rituais, ou para buscar
     informa\xE7\xF5es sobre os espiritos e outras entidades, n\xE3o consigo contar
     com os dedos quantas vezes esse livro salvou a minha vida."

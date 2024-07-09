@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
             //inventario.GetComponent<InventoryManager>().ListItems();
             inventario.SetActive(true);
             MouseController.Instance.UnlockMouse();
+            PauseController.Instance.Pause();
             //InventoryManager.Instance.ListItems();
         }
 
