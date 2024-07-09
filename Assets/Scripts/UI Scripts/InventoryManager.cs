@@ -27,7 +27,6 @@ public class InventoryManager : MonoBehaviour
         {
             Items[Items.IndexOf(item)].value += 1;
         }
-        ListItem(item);
     }
 
     /*
