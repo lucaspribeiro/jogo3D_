@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene("scenne Lucas");
+        SceneManager.LoadScene("scenne Luis");
     }
 
 }
