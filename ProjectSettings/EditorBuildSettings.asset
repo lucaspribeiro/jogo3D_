@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 31d43027c893c7440b2de2ea60ea390f
+  - enabled: 1
+    path: "Assets/Scenes/Cen\xE1rio.unity"
+    guid: 999c2f0923d6d2f4b9c553f5172f4fe5
+  - enabled: 0
+    path: Assets/Scenes/Death Menu.unity
+    guid: 61e64564693acc343b3314ea447ebbd0
   m_configObjects: {}
