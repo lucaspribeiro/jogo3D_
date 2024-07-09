@@ -33,6 +33,12 @@ public class EnemyMother : MonoBehaviour
                 Debug.Log("Jogador pressionou X.");
                 ReleasePlayer();
             }
+
+            if (isHiding)
+            {
+                ReturnToInitialPosition();
+            }
+
             return;
         }
 
