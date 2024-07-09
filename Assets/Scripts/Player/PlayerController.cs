@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,8 +20,8 @@ public class PlayerController : MonoBehaviour
     
     // **adicionei pra vida do personagem atualizar (nao sei como eh pra ser so fiz de exemplo)**
     public int maxHealth = 100;
-    public int currentHealth;
-    public Text healthText;
+    public int currentHealth = 100;
+    public TextMeshProUGUI healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -113,13 +114,13 @@ public class PlayerController : MonoBehaviour
     // **adicionei**
     void UpdateHealthUI()
     {
-        healthText.text = "Health: " + currentHealth;
+        healthText.text = "Vida: " + currentHealth;
     }
 
     // **adicionei**
     public void Die()
     {
-        SceneManager.LoadScene("scenne Luis");
+        SceneManager.LoadScene("Death Menu");
     }
 
 }
