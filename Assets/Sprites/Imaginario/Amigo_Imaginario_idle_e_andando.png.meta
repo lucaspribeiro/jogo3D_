@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 975cf597a8fa1d047896a32ad34a0c9b
+guid: 949df532b1bd1c1479c7b27b1cb76d46
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 700
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_foward_mom_0
+      name: Amigo_Imaginario_idle_e_andando_0
       rect:
         serializedVersion: 2
-        x: 366
-        y: 492
-        width: 1167
-        height: 2803
+        x: 232
+        y: 0
+        width: 609
+        height: 1565
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acebf716148ff26479cb3a434522c409
-      internalID: -605514972
+      spriteID: 17948ac200a8fdb45ab35530ce9c0b03
+      internalID: 1150986720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_foward_mom_1
+      name: Amigo_Imaginario_idle_e_andando_1
       rect:
         serializedVersion: 2
-        x: 2193
-        y: 2089
-        width: 24
-        height: 66
+        x: 1224
+        y: 0
+        width: 597
+        height: 1532
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 395d35dad76302d4e886e0bd6208ed4f
-      internalID: 1868370234
+      spriteID: 0860c38bb3d3aad40bd80176772c9a95
+      internalID: -668058636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_foward_mom_2
+      name: Amigo_Imaginario_idle_e_andando_2
       rect:
         serializedVersion: 2
-        x: 2490
-        y: 495
-        width: 1173
-        height: 2800
+        x: 2293
+        y: 0
+        width: 651
+        height: 1559
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 369db1d07a30b4948ba54082d1a83c58
-      internalID: 2125881125
+      spriteID: 59af55426d86ce64ab49209c724ef1e0
+      internalID: 851324938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_foward_mom_3
+      name: Amigo_Imaginario_idle_e_andando_3
       rect:
         serializedVersion: 2
-        x: 4245
-        y: 2089
-        width: 24
-        height: 66
+        x: 2329
+        y: 1451
+        width: 21
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fdd36f9baae3b641af9975bebfec5cd
-      internalID: 166255970
+      spriteID: 9991555430a720440b88a4d385933b82
+      internalID: -1999178370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_foward_mom_4
+      name: Amigo_Imaginario_idle_e_andando_4
       rect:
         serializedVersion: 2
-        x: 4518
-        y: 519
-        width: 1272
-        height: 2782
+        x: 1818
+        y: 149
+        width: 4
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec5d5018ace21df42a0095f33f5713fe
-      internalID: 1210943909
+      spriteID: 0e4b67b7c4eec314da098d36eb4c08ad
+      internalID: 20093283
       vertices: []
       indices: 
       edges: []
@@ -217,7 +217,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 357f19a005775644492567f41c7d6b85
+    spriteID: 8355b3b14e8ace946aac5568d133b99e
     internalID: 0
     vertices: []
     indices: 
@@ -225,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walk_foward_mom_0: -605514972
-      walk_foward_mom_1: 1868370234
-      walk_foward_mom_2: 2125881125
-      walk_foward_mom_3: 166255970
-      walk_foward_mom_4: 1210943909
+      Amigo_Imaginario_idle_e_andando_0: 1150986720
+      Amigo_Imaginario_idle_e_andando_1: -668058636
+      Amigo_Imaginario_idle_e_andando_2: 851324938
+      Amigo_Imaginario_idle_e_andando_3: -1999178370
+      Amigo_Imaginario_idle_e_andando_4: 20093283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
