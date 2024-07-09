@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 3
   itemName: Desenho
   value: 0
-  icon: {fileID: 21300000, guid: a9850068aafa11745affa6305cfdcf4b, type: 3}
+  icon: {fileID: 135591188, guid: f7d464d3d80ecf44a96fbc66a77a4f1a, type: 3}
+  imageDetails: {fileID: 21300000, guid: 0aabc8259a1a28642a3009c39ec0c6ee, type: 3}
   description: "\xC9 um desenho claramente feito por uma crian\xE7a, mas ele parece
     muito com aqueles desenhos de filmes de terror bem tosco, \xE9 quase como se
-    fosse artificial esse desenho, que sen\xE7ass\xE3o esquisita."
+    fosse artificial esse desenho, que sensa\xE7\xE3o esquisita."

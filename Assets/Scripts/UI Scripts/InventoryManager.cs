@@ -45,10 +45,9 @@ public class InventoryManager : MonoBehaviour
         {
             if (item.itemName.Equals("Sal") || item.itemName.Equals("Bandagens"))
             {
-                Items[Items.IndexOf(item)].value -= 1;
-                if (Items[Items.IndexOf(item)].value <= 0)
+                if(Items[Items.IndexOf(item)].value > 0)
                 {
-                    Items.Remove(item);
+                    Items[Items.IndexOf(item)].value -= 1;
                 }
             }
             else
@@ -142,7 +141,7 @@ public class InventoryManager : MonoBehaviour
             itemCount.text = null;
 
             Dialogue dialogo = new Dialogue();
-            dialogo.characterImage = item.icon;
+            dialogo.characterImage = item.imageDetails;
             dialogo.sentences = new List<string>();
             dialogo.sentences.Add(item.description);
             DialogueTrigger trigger = obj.transform.GetComponent<DialogueTrigger>();

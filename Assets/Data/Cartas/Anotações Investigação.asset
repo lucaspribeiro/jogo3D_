@@ -15,7 +15,8 @@ MonoBehaviour:
   id: 2
   itemName: "Anota\xE7\xF5es Investiga\xE7\xE3o"
   value: 0
-  icon: {fileID: 21300000, guid: a9850068aafa11745affa6305cfdcf4b, type: 3}
+  icon: {fileID: 1928496271, guid: f7d464d3d80ecf44a96fbc66a77a4f1a, type: 3}
+  imageDetails: {fileID: 21300000, guid: ccd5aa4271c5ccc4aa4e112a81771a94, type: 3}
   description: "Fiz uma pesquisa antes de vir para c\xE1, pelo que vi estas s\xE3o
     as principais vers\xF5es da historia dessa mans\xE3o.\n\nAcho que o que vale
     citar \xE9 o inc\xEAndio na casa e a ocorr\xEAncia de um assasinato, esses elementos

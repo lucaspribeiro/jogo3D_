@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public string itemName;
     public int value;
     public Sprite icon;
+    public Sprite imageDetails;
     [TextArea(3,10)]
     public string description;
 
